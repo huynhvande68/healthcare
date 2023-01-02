@@ -37,3 +37,7 @@ module.exports = {
 };
 
 👉6. Running Seeds: npx sequelize-cli db:seed:all
+
+👉7. update database migrate: $npx sequelize-cli db:migrate
+
+
