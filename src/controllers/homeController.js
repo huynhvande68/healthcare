@@ -35,10 +35,21 @@ let getSocial = (req,res) => {
     return res.render('test/socialmepage.ejs');
 }
 
+let displayGetCRUD = async(req,res) => {
+    let data = await CRUDService.getAllUser();
+    console.log("=================");
+    console.log(data);
+    console.log("=================");
+    return res.render('displayCRUD.ejs' , {
+        dataTable : data,
+    });
+}
+
 module.exports = {
     getHomePage: getHomePage,
     getAboutMe : getAboutMe,
     getCRUD : getCRUD,
     postCRUD: postCRUD,
     getSocial : getSocial,
+    displayGetCRUD : displayGetCRUD,
 }
