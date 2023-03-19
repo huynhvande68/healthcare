@@ -8,8 +8,10 @@ module.exports = {
       lastName: 'Van De',
       address: 'Quan 4 Ho Chi Minh',
       gender: 1,
-      typeRole: 'ROLE',
-      keyRole: 'R1',
+      image:"https://anhdep.com",
+      phoneNumber: '0828983419',
+      roleId: 'R1',
+      positionId: 'Bac si',
       createdAt: new Date(),
       updatedAt: new Date()
     }]);

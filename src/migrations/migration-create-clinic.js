@@ -12,12 +12,16 @@ module.exports = {
       address: {
         type: Sequelize.STRING
       },
+      name: {
+        type: Sequelize.INTEGER
+      },
       description: {
         type: Sequelize.TEXT
       },
       image: {
         type: Sequelize.INTEGER
       },
+      
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
