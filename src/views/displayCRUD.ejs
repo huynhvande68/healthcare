@@ -7,8 +7,16 @@
     <title>Display all users</title>
     <style>
         table, th, td {
-          border: 1px solid black;
+          border: 2px solid black;
           border-collapse: collapse;
+        }
+        .btn-edit{
+            background-color: greenyellow;
+            cursor: pointer;
+        }
+        .btn-delete{
+            background-color: red;
+            cursor: pointer;
         }
         </style>
 </head>
@@ -22,6 +30,7 @@
     <th>Address</th>
     <th>Gender</th>
     <th>PhoneNumber</th>
+    <th>Action</th>
   </tr>
   
   <% for(let i = 0; i < dataTable.length; i++){ %>
@@ -32,6 +41,10 @@
         <td> <%= dataTable[i].address %></td>
         <td> <%= dataTable[i].gender %></td>
         <td> <%= dataTable[i].phoneNumber %></td>
+        <td>
+            <a href="/edit-crud?id=<%= dataTable[i].id %>" class="btn-edit" type="button">Edit</a>
+            <a class="btn-delete" type="button">Delete</a>  
+        </td>
     </tr>
   <% } %>
   

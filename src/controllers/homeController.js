@@ -44,6 +44,26 @@ let displayGetCRUD = async(req,res) => {
         dataTable : data,
     });
 }
+let editCRUD = async (req, res) => {
+    let userId = req.query.id;
+    if(userId){
+        let userData = await CRUDService.getUserInfoById(userId);
+
+        return res.render('edit-crud.ejs',{
+            user : userData
+        })
+    }else{
+        return res.send('User not found');
+    }
+
+}
+let putCRUD = async(req, res) => {
+    let data = req.body;
+    let allUsers = await CRUDService.updateUserData(data);
+    return res.render('displayCRUD.ejs',{
+        dataTable: allUsers
+    });
+} 
 
 module.exports = {
     getHomePage: getHomePage,
@@ -52,4 +72,6 @@ module.exports = {
     postCRUD: postCRUD,
     getSocial : getSocial,
     displayGetCRUD : displayGetCRUD,
+    editCRUD :editCRUD,
+    putCRUD : putCRUD,
 }
